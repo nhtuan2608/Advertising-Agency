@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AdvType">
+    <typeAlias alias="type" type="com.aptech.advertising.entity.AdvType" />
+    <select id="findTypeByID"  resultClass="type" parameterClass="java.util.HashMap">
+        SELECT * FROM advertisingtype
+        WHERE AdvertisingTypeID = #advertisingTypeID#
+    </select>
+    <select id="findType"  resultClass="type" parameterClass="java.util.HashMap">
+        SELECT * FROM advertisingtype
+        WHERE AdvertisingTypeID = #advertisingTypeID#
+        <isNotEmpty property="nameType">
+            AND NameType = #nameType#
+        </isNotEmpty>
+        	  
+    </select>
+
+    <select id="getALLType"  resultClass="type" parameterClass="java.util.HashMap">
+        SELECT * FROM advertisingtype
+    </select>
+
+    <insert id="addType" parameterClass="java.util.HashMap">
+        INSERT INTO advertisingtype (AdvertisingTypeID, NameType, CreateDateType)
+        VALUES (#advertisingTypeID#, #nameType#, #createDateType#)
+    </insert>
+    
+    <delete id="deleteType" parameterClass="String">
+        DELETE FROM advertisingtype
+        WHERE AdvertisingTypeID = #AdvertisingTypeID#
+     </delete>
+     <update id="updateType" parameterClass="java.util.HashMap">
+        UPDATE advertisingtype
+        SET
+             AdvertisingTypeID = #advertisingTypeID#
+             NameType = #nameType#
+             CreateDateType = #createDateType#
+        WHERE AdvertisingTypeID = #advertisingTypeID#
+     </update>
+    
+
+</sqlMap>

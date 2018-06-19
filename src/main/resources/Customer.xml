@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Customer">
+    <typeAlias alias="customer" type="com.aptech.advertising.entity.Customer" />
+    
+    <select id="getCustomerById"  resultClass="customer" parameterClass="java.util.HashMap">
+        SELECT * FROM customer
+        WHERE customerID = #customerID#
+    </select>
+    
+    <select id="findCustomer"  resultClass="customer" parameterClass="java.util.HashMap">
+        SELECT * FROM customer
+        WHERE customerID = #customerID#
+        <isNotEmpty property="customerName">
+            AND customerName = #customerName#
+        </isNotEmpty>
+    </select>
+
+    <select id="getALLCustomer"  resultClass="customer" parameterClass="java.util.HashMap">
+        SELECT * FROM Customer
+    </select>
+
+    <insert id="addCustomer" parameterClass="java.util.HashMap">
+        INSERT INTO Customer (customerID,customerName, customerAddress, customerEmail, customerPhone, customerStatus)
+        VALUES (#customerID#,#customerName#, #customerAddress#, #customerEmail#, #customerPhone#, #customerStatus#);
+    </insert>
+    
+    <delete id="deleteCustomer" parameterClass="String">
+        DELETE FROM Customer
+        WHERE customerID = #customerID#
+     </delete>
+     
+     <update id="updateCustomer" parameterClass="java.util.HashMap">
+        UPDATE Customer
+        SET
+             customerName = #customerName#
+             customerAddress = #password#
+             customerEmail = #customerEmail#
+             customerPhone = #customerPhone#
+             customerStatus = #customerStatus#
+        WHERE customerId = #customerId#
+     </update>
+
+</sqlMap>

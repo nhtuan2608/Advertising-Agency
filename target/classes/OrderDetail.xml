@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="orderDetail">
+    <typeAlias alias="detail" type="com.aptech.advertising.entity.OrderDetail" />
+    <select id="findDetailByID"  resultClass="detail" parameterClass="java.util.HashMap">
+        SELECT * FROM orderdetail
+        WHERE ORDERDETAILID = #ORDERDETAILID#
+    </select>
+    <select id="findDetail"  resultClass="detail" parameterClass="java.util.HashMap">
+        SELECT * FROM orderdetail
+        WHERE OrderID = #OrderID#
+        	  ORDERDETAILID = #ORDERDETAILID#
+    </select>
+
+    <select id="getALLDetail"  resultClass="detail" parameterClass="java.util.HashMap">
+        SELECT * FROM orderdetail
+    </select>
+
+    <insert id="addDetail" parameterClass="java.util.HashMap">
+        INSERT INTO orderdetail (ORDERDETAILID, NameType, CreateDateType)
+        VALUES (#AdvertisingTypeID#, #NameType#, #CreateDateType#)
+    </insert>
+    
+    <delete id="deleteDetail" parameterClass="String">
+        DELETE FROM orderdetail
+        WHERE ORDERDETAILID = #ORDERDETAILID#
+     </delete>
+     <update id="updateDetail" parameterClass="java.util.HashMap">
+        UPDATE orderdetail
+        SET
+             ORDERDETAILID = #ORDERDETAILID#
+             NameType = #NameType#
+             CreateDateType = #CreateDateType#
+        WHERE AdvertisingTypeID = #AdvertisingTypeID#
+     </update>
+    
+
+</sqlMap>

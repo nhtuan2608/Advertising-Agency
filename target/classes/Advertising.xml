@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="Shift_JIS" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="Advertising">
+    <typeAlias alias="adv" type="com.aptech.advertising.entity.Advertising" />
+    <select id="findAdvByID"  resultClass="adv" parameterClass="java.util.HashMap">
+        SELECT * FROM advertising
+        WHERE advertisingID = #advertisingID#
+    </select>
+    <select id="findAdv"  resultClass="adv" parameterClass="java.util.HashMap">
+        SELECT * FROM advertising
+        WHERE advertisingID = #advertisingID#
+        	  ORDERDETAILID = #ORDERDETAILID#
+    </select>
+
+    <select id="getALLAdv"  resultClass="adv" parameterClass="java.util.HashMap">
+        SELECT * FROM advertising
+    </select>
+
+    <insert id="addAdv" parameterClass="java.util.HashMap">
+        INSERT INTO advertising (advertisingID, NameType, CreateDateType)
+        VALUES (#advertisingID#, #NameType#, #CreateDateType#)
+    </insert>
+    
+    <delete id="deleteAdv" parameterClass="String">
+        DELETE FROM advertising
+        WHERE advertisingID = #advertisingID#
+     </delete>
+     <update id="updateAdv" parameterClass="java.util.HashMap">
+        UPDATE advertising
+        SET
+             advertisingID = #advertisingID#
+             NameType = #NameType#
+             CreateDateType = #CreateDateType#
+        WHERE advertisingID = #advertisingID#
+     </update>
+    
+
+</sqlMap>
