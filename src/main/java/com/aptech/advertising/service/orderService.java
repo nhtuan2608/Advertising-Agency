@@ -14,28 +14,31 @@ public class orderService implements IServiceOrder{
 	}
 
 	public boolean addOrder(Order order) throws IOException {
-		// TODO Auto-generated method stub
-		return false;
+		return orderDAO.add(order);
 	}
 
-	public Order isExistOrder(String customerID) throws IOException {
-		// TODO Auto-generated method stub
-		return null;
+	public Order isExistOrder(String OrderID) throws IOException {
+		return orderDAO.find(OrderID);
 	}
 
 	public Order isCorrectOrder(String AccountID, String customerID) throws IOException {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	public boolean updateOrder(Order order) throws IOException {
-		// TODO Auto-generated method stub
-		return false;
+		return orderDAO.update(order);
 	}
 
 	public boolean deleteOrder(String orderID) throws IOException {
-		// TODO Auto-generated method stub
-		return false;
+		return orderDAO.delete(orderID);
+	}
+
+	public List<Order> findOrder(String orderID) throws IOException {
+		return orderDAO.findObject(orderID);
+	}
+
+	public Order isCorrectOrder(String OrderID, int AccountID, String customerID) throws IOException {
+		return orderDAO.check(OrderID, AccountID, customerID);
 	}
 
 }

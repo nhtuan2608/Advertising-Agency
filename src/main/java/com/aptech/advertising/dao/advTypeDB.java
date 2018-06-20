@@ -7,15 +7,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.sound.midi.Soundbank;
-
-import com.aptech.advertising.entity.Account;
 import com.aptech.advertising.entity.AdvType;
 import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
-public class advTypeDB implements IDB<AdvType, Boolean, String>{
+public class advTypeDB implements IDB<AdvType, Boolean, String, Integer> {
 
 	public Boolean add(AdvType type) throws IOException {
 		Reader rd = Resources.getResourceAsReader("SqlMapConfig.xml");
@@ -117,12 +114,17 @@ public class advTypeDB implements IDB<AdvType, Boolean, String>{
 		Map<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("advertisingTypeID", advertisingTypeID);
 		try {
-			advList = (List<AdvType>) smc.queryForList("AdvType.findTypeByID",paramMap);
+			advList = (List<AdvType>) smc.queryForList("AdvType.findTypeByID", paramMap);
 			System.out.println(advList);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return advList;
+	}
+
+	public AdvType check(String k, Integer i, String m) throws IOException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

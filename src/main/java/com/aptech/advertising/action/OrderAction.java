@@ -13,7 +13,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 @ResultPath(value = "/")
 @Action(value="/allorder" , results = { @Result(name = "success", location = "/WEB-INF/content/order.jsp"),
-			@Result(name = "error", location = "/WEB-INF/content/404.html") })
+			@Result(name = "error", location = "/WEB-INF/content/order.jsp") })
 public class OrderAction extends ActionSupport{
 		private static final long serialVersionUID = 1L;
 

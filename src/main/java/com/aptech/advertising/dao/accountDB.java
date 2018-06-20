@@ -12,7 +12,7 @@ import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
-public class accountDB implements IDB<Account, Boolean, String> {
+public class accountDB implements IDB<Account, Boolean, String, Integer> {
 
 	public Boolean add(Account usr) throws IOException {
 		Reader rd = Resources.getResourceAsReader("SqlMapConfig.xml");
@@ -115,11 +115,16 @@ public class accountDB implements IDB<Account, Boolean, String> {
 		Map<String, String> paramMap = new HashMap<String, String>();
 		paramMap.put("userName", username);
 		try {
-			userList = (List<Account>) smc.queryForList("Users.findUser",paramMap);
+			userList = (List<Account>) smc.queryForList("Users.findUser", paramMap);
 			System.out.println(userList);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return userList;
 	}
+
+	public Account check(String k, Integer i, String customerID) throws IOException {
+		return null;
+	}
+
 }

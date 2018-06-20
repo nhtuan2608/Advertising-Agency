@@ -27,19 +27,38 @@
                 <s:if test="hasActionMessages()">
                       <s:actionmessage/>
                 </s:if>
-                <br><br>
                 <s:form action="addType" method="post"  style="align:center">
                     <table>
                         <tr>
-                        <th>ID Advertising's type:</th>
+                        <th>AdvName: </th>
                         <td><input type="text"  name="AdvertisingTypeID" value='<s:property value="AdvertisingTypeID"/>'></td>
                        	</tr>
                        	<tr>
-                       	<th>Type Name:</th>
+                       	<th>AdvLength: </th>
                        	<td><input type="text" name="NameType" value='<s:property value="NameType"/>'></td>
                       	</tr>
                       	<tr>
-                      	<th>Create Date:</th>
+                      	<th>AdvWidth: </th>
+                      	<td><input type="text"  name="CreateDateType" value='<s:property value="CreateDateType"/>'></td>
+                        </tr>
+                        <tr>
+                      	<th>AdvSize: </th>
+                      	<td><input type="text"  name="CreateDateType" value='<s:property value="CreateDateType"/>'></td>
+                        </tr>
+                        <tr>
+                      	<th>AdvPrice: </th>
+                      	<td><input type="text"  name="CreateDateType" value='<s:property value="CreateDateType"/>'></td>
+                        </tr>
+                        <tr>
+                      	<th>AdvPosition: </th>
+                      	<td><input type="text"  name="CreateDateType" value='<s:property value="CreateDateType"/>'></td>
+                        </tr>
+                        <tr>
+                      	<th>AdvPagePosition: </th>
+                      	<td><input type="text"  name="CreateDateType" value='<s:property value="CreateDateType"/>'></td>
+                        </tr>
+                        <tr>
+                      	<th>Form: </th>
                       	<td><input type="text"  name="CreateDateType" value='<s:property value="CreateDateType"/>'></td>
                         </tr>
                         <tr>

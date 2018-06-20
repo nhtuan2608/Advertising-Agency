@@ -9,7 +9,7 @@ import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
-public class advertisingDB implements IDB<Advertising, Boolean, String>{
+public class advertisingDB implements IDB<Advertising, Boolean, String, Integer>{
 
 	public Boolean add(Advertising e) throws IOException {
 		// TODO Auto-generated method stub
@@ -50,6 +50,11 @@ public class advertisingDB implements IDB<Advertising, Boolean, String>{
 	}
 
 	public List<Advertising> findObject(String k) throws IOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Advertising check(String k, Integer i, String m) throws IOException {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -9,7 +9,7 @@ import com.ibatis.common.resources.Resources;
 import com.ibatis.sqlmap.client.SqlMapClient;
 import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 
-public class orderDetailDB implements IDB<OrderDetail, Boolean, String>{
+public class orderDetailDB implements IDB<OrderDetail, Boolean, String, Integer>{
 
 	public Boolean add(OrderDetail e) throws IOException {
 		// TODO Auto-generated method stub
@@ -50,6 +50,11 @@ public class orderDetailDB implements IDB<OrderDetail, Boolean, String>{
 	}
 
 	public List<OrderDetail> findObject(String k) throws IOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public OrderDetail check(String k, Integer i, String m) throws IOException {
 		// TODO Auto-generated method stub
 		return null;
 	}

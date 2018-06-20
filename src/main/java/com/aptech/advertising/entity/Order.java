@@ -1,24 +1,29 @@
 package com.aptech.advertising.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Order implements Serializable{
-	
+public class Order implements Serializable {
+
 	private static final long serialVersionUID = 1L;
-	private int orderID;
+	private int orderNo;
+	private String orderID;
 	private String customerID;
 	private int accountID;
 	private String orderStatus;
 	private String orderDate;
 	private String orderRelease;
 	private String paymentStatus;
-	
+	private List<Order> orderList;
+
 	public Order() {
-		
+		this.orderList = new ArrayList<Order>();
 	}
 
-	public Order(int orderID, String customerID, int accountID, String orderStatus, String orderDate, String orderRelease,
-			String paymentStatus) {
+	public Order(int orderNo, String orderID, String customerID, int accountID, String orderStatus, String orderDate,
+			String orderRelease, String paymentStatus) {
+		this.orderNo = orderNo;
 		this.orderID = orderID;
 		this.customerID = customerID;
 		this.accountID = accountID;
@@ -38,16 +43,33 @@ public class Order implements Serializable{
 		this.paymentStatus = paymentStatus;
 	}
 
-	public Order(String customerID, int accountID) {
+	public Order(String orderID, String customerID, int accountID) {
+		this.orderID = orderID;
 		this.customerID = customerID;
 		this.accountID = accountID;
 	}
 
-	public int getOrderID() {
+	public List<Order> getOrderList() {
+		return orderList;
+	}
+
+	public void setOrderList(List<Order> orderList) {
+		this.orderList = orderList;
+	}
+
+	public int getOrderNo() {
+		return orderNo;
+	}
+
+	public void setOrderNo(int orderNo) {
+		this.orderNo = orderNo;
+	}
+
+	public String getOrderID() {
 		return orderID;
 	}
 
-	public void setOrderID(int orderID) {
+	public void setOrderID(String orderID) {
 		this.orderID = orderID;
 	}
 
@@ -98,6 +120,5 @@ public class Order implements Serializable{
 	public void setPaymentStatus(String paymentStatus) {
 		this.paymentStatus = paymentStatus;
 	}
-	
-	
+
 }

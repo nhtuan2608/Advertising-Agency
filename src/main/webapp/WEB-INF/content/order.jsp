@@ -28,26 +28,85 @@
                       <s:actionmessage/>
                 </s:if>
                 <br><br>
-                <s:form action="addType" method="post"  style="align:center">
-                    <table>
+                <s:form action="addOrder" method="post"  style="align:center">
+                    <table style="font-weight: bold; font-size: 14">
                         <tr>
-                        	<th>ID Advertising's type:</th>
+                        	<th>Order ID: </th>
                         		<td><input type="text"  name="AdvertisingTypeID" value='<s:property value="AdvertisingTypeID"/>'></td>
+                        	<td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td>Order Created on:</td>
+	                        <td><input type="text"  name="CreateDateType" value='<s:property value="CreateDateType"/>'></td>
                         </tr>
                         <tr>
-                        	<th>Type Name:</th>
+                        	<th>Customer ID:</th>
                         		<td><input type="text" name="NameType" value='<s:property value="NameType"/>'></td>
+                        	<td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td>Order Release:</td>
+	                        <td><input type="text"  name="CreateDateType" value='<s:property value="CreateDateType"/>'></td>
                         </tr>
                         <tr>
-                        	<th>Create Date:</th>
+                        	<th>Account ID:</th>
+                        	<td><input type="text"  name="CreateDateType" value='<s:property value="CreateDateType"/>'></td>
+                            <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td>Order Status</td>
+	                        <td><input type="text"  name="CreateDateType" value='<s:property value="CreateDateType"/>'></td>
+                        </tr>
+                        <tr>
+                        	<th></th>
+                        	<td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+                        	<td>Payment Status</td>
                         	<td><input type="text"  name="CreateDateType" value='<s:property value="CreateDateType"/>'></td>
                             
                         </tr>
                         <tr>
                             <th></th>
+                            <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>	
                             <td>
-                                 <button name="submitType" value="addType" type="submit">Add</button>
-                                 <button name="submitType" value="editType" type="submit">Update</button>
+                                 <button name="submitOrder" value="addOrder" type="submit">Add</button>
+                                 <button name="submitOrder" value="editOrder" type="submit">Update</button>
                             </td>
                         </tr>
                      </table>
@@ -55,19 +114,24 @@
                <div>
                    <table class="data">
                          <tr class="data">
-                              <th class="data" width="30px">No</th>
-                              <th class="data">ID Advertising's type</th>
-                              <th class="data">Type Name</th>
-                              <th class="data">Create Date</th>
+                              <th class="data" align="center">No.</th>
+                              <th class="data" align="center">OrderID</th>
+                              <th class="data" align="center">CustomerID</th>
+                              <th class="data" align="center">AccountID</th>
+                              <th class="data" align="center">Order Created on</th>
+                              <th class="data" align="center">Order Release</th>
+                              <th class="data" align="center">Order Status</th>
+                              <th class="data" align="center">Payment Status</th>
                           </tr>
                           <s:iterator var="order" value="orderALL">
                               <tr>
-                              <th width="30px"><s:property value="#order.OrderID"/></th>
-                              <th><s:property value="#order.CustomerNo"/></th>
-                              <th><s:property value="#order.OrderStatus"/></th>
+                              <th><s:property value="#order.OrderNo"/></th>
+                              <th><s:property value="#order.OrderID"/></th>
+                              <th><s:property value="#order.CustomerID"/></th>
                               <th><s:property value="#order.AccountID"/></th>
                               <th><s:property value="#order.OrderDate"/></th>
                               <th><s:property value="#order.OrderRelease"/></th>
+                              <th><s:property value="#order.OrderStatus"/></th>
                               <th><s:property value="#order.PaymentStatus"/></th>
                               <th>
                               <a href="editcustomer.action?customerId=<s:property value="#customer.customerId"/>">

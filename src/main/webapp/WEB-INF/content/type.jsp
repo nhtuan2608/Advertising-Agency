@@ -2,6 +2,22 @@
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https:/resources/demos/style.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker({
+    	changeMonth: true,
+    	changeYear: true,
+    	yearRange: "2000:2050",
+    	dateFormat: "yy/mm/dd",
+    	duration: "slow"
+    });
+  } );
+ </script>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <tiles:insertDefinition name="defaultLayout">
     <tiles:putAttribute name="main">
@@ -27,7 +43,6 @@
                 <s:if test="hasActionMessages()">
                       <s:actionmessage/>
                 </s:if>
-                <br><br>
                 <s:form action="addType" method="post"  style="align:center">
                     <table>
                         <tr>
@@ -40,7 +55,7 @@
                         </tr>
                         <tr>
                         <th>Create Date:</th>
-                        <td><input type="text"  name="CreateDateType" value='<s:property value="CreateDateType"/>'></td>
+                        <td><input type="text" id="datepicker"  name="CreateDateType" value='<s:property value="CreateDateType"/>'></td>
                         </tr>
                         <tr>
                             <th></th>
