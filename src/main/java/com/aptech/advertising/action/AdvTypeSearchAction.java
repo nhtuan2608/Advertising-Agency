@@ -30,7 +30,7 @@ public class AdvTypeSearchAction extends ActionSupport {
 			typeALL = typeService.findObject(searchType.trim());
 			if(typeALL.size() <= 0 )
 			{
-				msgSearch = "No exist";
+				msgSearch = "No exists";
 			}
 			System.out.println(typeALL);
 		}

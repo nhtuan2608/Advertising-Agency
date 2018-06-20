@@ -1,6 +1,7 @@
 package com.aptech.advertising.action;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.struts2.convention.annotation.Action;
@@ -21,7 +22,7 @@ public class CustomerAction extends ActionSupport {
 	private List<Customer> customerALL;
 	private customerService cusService = new customerService();
 	private String takeDate = ResultAction.getDateNow;
-	
+
 	public String getTakeDate() {
 		return takeDate;
 	}
@@ -32,8 +33,6 @@ public class CustomerAction extends ActionSupport {
 
 	public String execute() throws IOException {
 		customerALL = cusService.allCustomer();
-		System.out.println("ds customer "+customerALL);
-		System.out.println("Today: "+ takeDate);
 		return SUCCESS;
 	}
 

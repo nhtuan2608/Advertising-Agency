@@ -28,28 +28,60 @@
                 <s:if test="hasActionMessages()">
                       <s:actionmessage/>
                 </s:if>
-                <br><br>
                 <s:form action="addCustomer" method="post"  style="align:center">
-                    <table>
+                    <table style="font-weight: bold;font-size: 14;">
                         <tr>
-                        	<th><b>Customer ID: 	   </b>
-                        		<select name="customerID" id="customerID" style="width: 120px" title="-- Select a role --">
-                            	<option value="customerID"> <s:property value="takeDate"/></option>
-                            	</select>
-                            <th><b>Customer Name:  </b><input type="text" name="customerName" style="width: 120px" value='<s:property value="customerName"/>'></th>
-                            <th><b>Address:        </b><input type="text"  name="customerAddress" style="width: 120px" value='<s:property value="customerAddress"/>'></th>
-                            <th><b>Email:          </b><input type="text" name="customerEmail" style="width: 120px" value='<s:property value="customerEmail"/>'></th>
-                            <th><b>Phone:          </b><input type="text" name="customerPhone" style="width: 120px" value='<s:property value="customerPhone"/>'></th>
-                            <th><b>Status:         </b><input type="text" name="customerStatus" style="width: 120px" value='<s:property value="customerStatus"/>'></th>
+	                        <th>Customer ID:</th>
+	                        <td><select name="customerID" id="customerID" style="width: 160px" title="-- Select a role --">
+	                            	<option value="customerID"> <s:property value="takeDate"/></option>
+	                            	</select>
+	                        </td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td style="">Phone:</td>
+	                        <td><input type="text" name="customerPhone" style="width: 150px" value='<s:property value="customerPhone"/>'></td>
                         </tr>
                         <tr>
-                            <th>
-                                 <button name="submitType" value="addCustomer" type="submit" onclick="reset();">Add</button>
-                                 <button name="submitType" value="editCustomer" type="submit">Update</button>
-                            </th>
+	                        <th>Customer Name:</th>
+	                        <td><input type="text" name="customerName" style="width: 150px" value='<s:property value="customerName"/>'></td>
+                        	<td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td>Status:</td>
+	                        <td><select name="customerStatus" id="customerStatus" style="width: 160px" title="-- Select a status --">
+	                            	<option value="Completed"> Completed </option>
+                            		<option value="Pending"> Pending </option>
+	                            </select></td>
+                        </tr>
+                        <tr>
+	                        <th>Address:</th>
+	                        <td><input type="text" name="customerAddress" style="width: 150px" value='<s:property value="customerAddress"/>'></td>
+                        	<td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <td></td>
+	                        <th></th>
+	                        <td><button name="submitType" value="addCustomer" type="submit" onclick="reset();">Add</button>
+                                 <button name="submitType" value="editCustomer" type="submit">Update</button></td>
+                        </tr>
+                        <tr>
+	                        <th>Email:</th>
+	                        <td><input type="text" name="customerEmail" style="width: 150px" value='<s:property value="customerEmail"/>'></td>
                         </tr>
                      </table>
-               </s:form> 
+               </s:form>
                <div>
                    <table class="data" border="1px" >
                          <tr class="data">
